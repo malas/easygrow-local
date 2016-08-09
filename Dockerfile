@@ -1,4 +1,4 @@
-FROM node:argon
+FROM hypriot/rpi-node:argon
 
 # Create app directory
 RUN mkdir -p /usr/src/app
