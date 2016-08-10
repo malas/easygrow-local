@@ -7,6 +7,9 @@ services:
         - db
     links:
         - db
+    devices:
+        - /dev/ttyAMA0:/dev/ttyAMA0
+        - /dev/mem:/dev/mem
   db:
     image: mongo:latest
     #restart: always
