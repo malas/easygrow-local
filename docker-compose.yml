@@ -2,17 +2,18 @@ version: '2'
 services:
   node:
     image: malaslt/easygrow-local-rpi:latest
-    #restart: always
+    restart: always
+    privileged: true
     depends_on:
         - db
     links:
         - db
     devices:
-        - /dev/ttyAMA0:/dev/ttyAMA0
-        - /dev/mem:/dev/mem
+        - "/dev/ttyAMA0:/dev/ttyAMA0"
+        - "/dev/mem:/dev/mem"
   db:
     image: mongo:latest
-    #restart: always
+    restart: always
     volumes:
         - ./data:/data/db
   
@@ -24,3 +25,4 @@ services:
         - db:mongo
     ports:
         - "8081:8081"
+    restart: always
