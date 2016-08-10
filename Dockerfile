@@ -1,13 +1,18 @@
 FROM hypriot/rpi-node:argon
 
+# Install WiringPi
+RUN apt-get update && apt-get install -y \
+    git-core \
+    build-essential \
+    gcc \
+    --no-install-recommends && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN git clone git://git.drogon.net/wiringPi
+RUN cd wiringPi && ./build
+
 # Create app directory
 RUN mkdir -p /usr/src/app
-
-# Install WiringPi
-COPY ./vendor/wiringPi /usr/src/wiringPi
-WORKDIR /usr/src/wiringPi
-RUN ./build && gpio -v
-
 WORKDIR /usr/src/app
 
 # Install app dependencies
@@ -15,6 +20,6 @@ COPY app/package.json /usr/src/app/
 RUN npm install
 
 # Bundle app source
-COPY ./app /usr/src/app
+COPY ./app/index.js /usr/src/app/
 
 CMD ["node","index.js"]
