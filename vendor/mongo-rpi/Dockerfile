@@ -1,10 +1,9 @@
-FROM hypriot/rpi-alpine-scratch
+FROM resin/rpi-raspbian:jessie
 
-RUN apk update && \
-apk upgrade && \
-apk add bash && \
-apt-get install mongodb-server \
-rm -rf /var/cache/apk/*
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    ca-certificates \
+    mongodb-server \
+    rm -rf /var/cache/apk/*
 
 EXPOSE 27017
 
