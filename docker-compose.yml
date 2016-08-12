@@ -16,13 +16,14 @@ services:
     restart: always
     volumes:
         - ./data:/data/db
-  
-  mongo-express:
-    image: mongo-express
-    depends_on:
-        - db
-    links:
-        - db:mongo
-    ports:
-        - "8081:8081"
-    restart: always
+
+# Can not find ARM7 version  
+#  mongo-express:
+#    image: mongo-express
+#    depends_on:
+#        - db
+#    links:
+#        - db:mongo
+#    ports:
+#        - "8081:8081"
+#    restart: always
