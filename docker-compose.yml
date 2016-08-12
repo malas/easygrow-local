@@ -12,7 +12,7 @@ services:
         - "/dev/ttyAMA0:/dev/ttyAMA0"
         - "/dev/mem:/dev/mem"
   db:
-    image: partlab/ubuntu-arm-mongodb:latest
+    image: jixer/rpi-mongo:latest
     restart: always
     volumes:
         - ./data:/data/db
