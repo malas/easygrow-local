@@ -8,8 +8,9 @@ RUN apt-get update && apt-get install -y \
     --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
-RUN git clone git://git.drogon.net/wiringPi
-RUN cd wiringPi && ./build
+# Node module for wiring-pi installs it
+# RUN git clone git://git.drogon.net/wiringPi
+# RUN cd wiringPi && ./build
 
 # Create app directory
 RUN mkdir -p /usr/src/app

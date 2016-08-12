@@ -14,7 +14,8 @@
   "author": "Laurynas Mališauskas <laurynas.malisauskas@gmail.com>",
   "license": "BSD-2-Clause",
   "dependencies": {
+    "agenda": "git+https://github.com/rschmukler/agenda.git",
     "mongodb": "~2.2.5",
-    "agenda": "git+https://github.com/rschmukler/agenda.git"
+    "wiring-pi": "^2.1.1"
   }
 }
