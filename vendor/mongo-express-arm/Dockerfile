@@ -8,6 +8,6 @@ RUN npm install mongo-express
 
 EXPOSE 8081
 
-RUN cd /node_modules/mongo-express && cp config.default.js config.js
+RUN cd /usr/src/app/node_modules/mongo-express && cp config.default.js config.js
 
 CMD ["node", "/usr/src/app/node_modules/mongo-express/app.js"]
