@@ -1,6 +1,6 @@
 FROM hypriot/rpi-node:argon
 
-RUN npm install -g mongo-express
+RUN npm install mongo-express
 
 EXPOSE 8081
 
