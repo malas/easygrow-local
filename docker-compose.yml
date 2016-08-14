@@ -18,7 +18,7 @@ services:
         - ./data:/data/db
 
   mongo-express:
-    image: mongo-express
+    image: malaslt/mongo-express-rpi:latest
     depends_on:
         - db
     links:
