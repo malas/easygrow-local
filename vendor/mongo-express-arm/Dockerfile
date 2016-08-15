@@ -4,10 +4,8 @@ FROM hypriot/rpi-node:argon
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-RUN npm install mongo-express
+RUN npm install --save agendash
 
-EXPOSE 8081
+EXPOSE 3000
 
-RUN cd /usr/src/app/node_modules/mongo-express && cp config.default.js config.js
-
-CMD ["node", "/usr/src/app/node_modules/mongo-express/app.js"]
+CMD ["./node_modules/.bin/agendash --db=mongodb://mongo/agenda"]
