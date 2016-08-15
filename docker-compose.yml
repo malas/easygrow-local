@@ -12,7 +12,7 @@ services:
         - "/dev/ttyAMA0:/dev/ttyAMA0"
         - "/dev/mem:/dev/mem"
   db:
-    image: dhermanns/rpi-mongo
+    image: malaslt/mongodb-rpi
     restart: always
     volumes:
         - ./data:/data/db
