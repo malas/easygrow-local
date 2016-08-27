@@ -8,4 +8,4 @@ RUN npm install --save agendash
 
 EXPOSE 3000
 
-CMD ["node_modules/agendash/bin/agendash-standalone.js .bin/agendash --db=mongodb://mongo/agenda"]
+CMD ["node node_modules/agendash/bin/agendash-standalone.js .bin/agendash --db=mongodb://mongo/agenda"]
