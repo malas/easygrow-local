@@ -22,7 +22,7 @@ services:
     depends_on:
         - db
     links:
-        - db:mongo
+        - db:mongodb
     ports:
         - "3000:3000"
     restart: always
