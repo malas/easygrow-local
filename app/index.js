@@ -29,7 +29,7 @@ for (var i = 0, len = relayPins.length; i < len; i++) {
 }
 var pwmPins = [1];
 for (var i = 0, len = pwmPins.length; i < len; i++) {
-  wpi.pinMode(relayPins[i], wpi.PWM_OUTPUT);
+  wpi.pinMode(pwmPins[i], wpi.PWM_OUTPUT);
 }
 
 var mongoConnectionString = "mongodb://db:27017/agenda";
