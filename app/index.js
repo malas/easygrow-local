@@ -53,7 +53,7 @@ agenda.define('relay switch off', function(job, done) {
 
 agenda.define('pwm switch on', function(job, done) {
   var data = job.attrs.data;
-  pwmSwitch(data.pins, 1024, done);
+  pwmSwitch(data.pins, 1023, done);
 });
 
 agenda.define('pwm switch off', function(job, done) {
