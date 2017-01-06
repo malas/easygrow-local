@@ -43,12 +43,12 @@ var agenda = new Agenda({
 // job definitions
 agenda.define('relay switch on', function(job, done) {
   var data = job.attrs.data;
-  relaySwitch(data.pins, true, done);
+  relaySwitch(data.pins, 1, done);
 });
 
 agenda.define('relay switch off', function(job, done) {
   var data = job.attrs.data;
-  relaySwitch(data.pins, false, done);
+  relaySwitch(data.pins, 0, done);
 });
 
 agenda.define('pwm switch on', function(job, done) {
