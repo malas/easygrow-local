@@ -1,4 +1,4 @@
-= docker-compose commands =
+# docker-compose commands
 
 * docker-compose up
 paleidzia visus container sukonfigintus docker-compose.yml
@@ -19,3 +19,9 @@ seka loguinima visuose paleistuose konteineriuose
 
 * docker volume rm $(docker volume ls -qf dangling=true)
 pasalina visus volumes
+
+# Standart network parameters
+IP: 192.168.1.154
+host_name: black-pearl
+user: pirate
+pass: hypriot
