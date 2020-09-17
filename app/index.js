@@ -51,6 +51,16 @@ agenda.define('relay switch off', function(job, done) {
   relaySwitch(data.pins, 0, done);
 });
 
+agenda.define('lights switch on', function(job, done) {
+  var data = job.attrs.data;
+  relaySwitch(data.pins, 1, done);
+});
+
+agenda.define('lights switch off', function(job, done) {
+  var data = job.attrs.data;
+  relaySwitch(data.pins, 0, done);
+});
+
 agenda.define('pwm switch on', function(job, done) {
   var data = job.attrs.data;
   pwmSwitch(data.pins, 1023, done);
