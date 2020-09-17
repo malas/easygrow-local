@@ -23,7 +23,7 @@ function pwmSwitch(pins, status, done) {
 
 // initialization
 wpi.setup('wpi');
-var relayPins = [7];
+var relayPins = [7, 2];
 for (var i = 0, len = relayPins.length; i < len; i++) {
   wpi.pinMode(relayPins[i], wpi.OUTPUT);
 }
