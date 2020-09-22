@@ -75,7 +75,7 @@ agenda.define('pwm switch off', function(job, done) {
 
 agenda.on('ready', function() {
   // initial new jobs saved into db
-  
+  /*
   agenda.every('0-4,10-14,20-24,30-34,40-44,50-54 * * * *', 'relay switch on', { pins: [7], status: true });
   agenda.every('5-9,15-19,25-29,35-39,45-49,55-59 * * * *', 'relay switch off', { pins: [7], status: false });
 
@@ -84,7 +84,7 @@ agenda.on('ready', function() {
   
   agenda.every('* 8-20 * * *', 'pwm switch on', { pins: pwmPins });
   agenda.every('* 0-7,21-23 * * *', 'pwm switch off', { pins: pwmPins });
-
+  */
   agenda.start();
 });
 
