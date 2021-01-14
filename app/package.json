@@ -15,7 +15,7 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "agenda": "https://github.com/malas/agenda.git",
-    "mongodb": "~2.2.5",
+    "mongodb": "~3.6.1",
     "wiring-pi": "^2.1.1"
   }
 }
