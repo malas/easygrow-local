@@ -11,7 +11,9 @@
 - install Docker
   - curl -fsSL https://get.docker.com | sh
   - sudo usermod -aG docker _easygrow1_
-  - _easygrow1_ in the above command is the username you selected when configuring OS
+    - _easygrow1_ in the above command is the username you selected when configuring OS
+  - sudo systemctl enable docker
+    - this command enables docker at system startup  
 
 # docker-compose commands
 
