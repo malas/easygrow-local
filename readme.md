@@ -14,6 +14,21 @@
     - _easygrow1_ in the above command is the username you selected when configuring OS
   - `sudo systemctl enable docker`
     - this command enables docker at system startup
+- instal docker compose
+  - `wget https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-linux-aarch64 -O docker-compose`
+    - visit the https://github.com/docker/compose/releases page to check for the latest version 
+  - `chmod +x docker-compose`
+  - `sudo mv docker-compose /usr/local/bin/`
+  - `docker-compose version`
+    - This should output something like `Docker Compose version v2.27.0`
+
+# Setting up easygrow
+
+- download the easygrow source code
+  - `git clone https://github.com/malas/easygrow-local.git`
+  - `cd easygrow-local`
+- build the containers
+  - `docker-compose build`
 
 # SSH connect to raspberryPi
 
@@ -24,7 +39,6 @@ With the default settings one would connect via command
 or alternativelly
 
 `ssh easygrow1@easygrow1.local`
-
 
 # docker-compose commands
 
