@@ -5,27 +5,27 @@ services:
     restart: always
     privileged: true
     depends_on:
-        - db
+      - db
     links:
-        - db
+      - db
     devices:
-        - "/dev/ttyAMA0:/dev/ttyAMA0"
-        - "/dev/mem:/dev/mem"
+      - "/dev/ttyAMA0:/dev/ttyAMA0"
+      - "/dev/mem:/dev/mem"
   db:
-    image: malaslt/mongodb-rpi
+    image: mongo/6-jammy
     restart: always
     volumes:
-        - ./data:/data/db
+      - ./data:/data/db
 
   mongo-express:
-    image: malaslt/mongo-express-arm:latest
+    image: mongo-express/1.0
     depends_on:
-        - db
+      - db
     links:
-        - db:mongo
+      - db:mongo
     ports:
-        - "8081:8081"
+      - "8081:8081"
     restart: always
     environment:
-        - ME_CONFIG_BASICAUTH_USERNAME=pirate
-        - ME_CONFIG_BASICAUTH_PASSWORD=hypriot
+      ME_CONFIG_BASICAUTH_USERNAME=easygrow1
+      ME_CONFIG_BASICAUTH_PASSWORD=easygrow1
