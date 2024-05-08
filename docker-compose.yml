@@ -17,7 +17,7 @@ services:
       - ./data:/data/db
 
   mongo-express:
-    image: mongo-express/1.0
+    image: mongo-express
     depends_on:
       - db
     links:
