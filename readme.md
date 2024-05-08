@@ -1,4 +1,4 @@
-# rPi setup
+# raspberryPi setup
 
 - instal standart raspbian OS into SD card
 - run for the first time for initial OS configuration
@@ -6,14 +6,25 @@
   - configure username and password. default _easygrow1_/_easygrow1_
 - run the OS for the first time
 - configure hostname
-  - sudo raspi-config Default _easygrow1_
+  - `sudo raspi-config Default easygrow1`
   - we need an integer at the end of hostname in order to have multiple devices in the same network
 - install Docker
-  - curl -fsSL https://get.docker.com | sh
-  - sudo usermod -aG docker _easygrow1_
+  - `curl -fsSL https://get.docker.com | sh`
+  - `sudo usermod -aG docker easygrow1`
     - _easygrow1_ in the above command is the username you selected when configuring OS
-  - sudo systemctl enable docker
-    - this command enables docker at system startup  
+  - `sudo systemctl enable docker`
+    - this command enables docker at system startup
+
+# SSH connect to raspberryPi
+
+With the default settings one would connect via command
+
+`ssh easygrow1@easygrow1.lan`
+
+or alternativelly
+
+`ssh easygrow1@easygrow1.local`
+
 
 # docker-compose commands
 
@@ -37,13 +48,5 @@ seka loguinima visuose paleistuose konteineriuose
 * docker volume rm $(docker volume ls -qf dangling=true)
 pasalina visus volumes
 
-# Standart network parameters
-
 ## Shutdown rPi
 sudo shutdown -h now
-
-## LEGACY:
-IP: 192.168.1.154
-host_name: black-pearl
-user: pirate
-pass: hypriot
