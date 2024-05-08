@@ -11,7 +11,7 @@ services:
       - "/dev/ttyAMA0:/dev/ttyAMA0"
       - "/dev/mem:/dev/mem"
   db:
-    image: mongo/6-jammy
+    image: mongo:6-jammy
     restart: always
     volumes:
       - ./data:/data/db
