@@ -1,6 +1,7 @@
 services:
   node:
-    image: malaslt/easygrow-local-rpi:latest
+    # image: malaslt/easygrow-local-rpi:latest
+    build: .
     restart: always
     privileged: true
     depends_on:
@@ -13,18 +14,25 @@ services:
   db:
     image: mongo:6-jammy
     restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: easygrow1
+      MONGO_INITDB_ROOT_PASSWORD: easygrow1
     volumes:
       - ./data:/data/db
+    ports:
+      - "0.0.0.0:27017:27017"
 
   mongo-express:
     image: mongo-express
     depends_on:
       - db
     links:
-      - db:mongo
+      - db
     ports:
       - "8081:8081"
     restart: always
     environment:
-      - ME_CONFIG_BASICAUTH_USERNAME=easygrow1
-      - ME_CONFIG_BASICAUTH_PASSWORD=easygrow1
+      ME_CONFIG_MONGODB_ADMINUSERNAME: easygrow1
+      ME_CONFIG_MONGODB_ADMINPASSWORD: easygrow1
+      ME_CONFIG_MONGODB_SERVER: db
+      ME_CONFIG_MONGODB_PORT: "27017"
