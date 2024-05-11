@@ -1,4 +1,4 @@
-FROM hypriot/rpi-node:argon
+FROM node:lts
 
 # Install WiringPi
 RUN apt-get update && apt-get install -y \
