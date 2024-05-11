@@ -1,5 +1,8 @@
 FROM node:lts
 
+# Update npm to latest version
+RUN npm install -g npm
+
 # Install WiringPi
 RUN apt-get update && apt-get install -y \
     git-core \
